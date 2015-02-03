@@ -1,0 +1,9 @@
+D:\Users\Saruchi\Documents\GitHub\FileOwner\bin\Debug\FileOwner.exe.config
+D:\Users\Saruchi\Documents\GitHub\FileOwner\bin\Debug\FileOwner.exe
+D:\Users\Saruchi\Documents\GitHub\FileOwner\bin\Debug\FileOwner.pdb
+D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.csprojResolveAssemblyReference.cache
+D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.Form1.resources
+D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.Properties.Resources.resources
+D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.csproj.GenerateResource.Cache
+D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.exe
+D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.pdb
