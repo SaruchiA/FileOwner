@@ -33,8 +33,8 @@
             this.textFile = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textOwner = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buttonChangeOwner = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +60,7 @@
             this.textFile.Multiline = true;
             this.textFile.Name = "textFile";
             this.textFile.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textFile.Size = new System.Drawing.Size(402, 165);
+            this.textFile.Size = new System.Drawing.Size(461, 202);
             this.textFile.TabIndex = 2;
             // 
             // label2
@@ -73,7 +73,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(524, 288);
+            this.button1.Location = new System.Drawing.Point(389, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -81,29 +81,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textOwner
+            // comboBox1
             // 
-            this.textOwner.Location = new System.Drawing.Point(620, 70);
-            this.textOwner.Multiline = true;
-            this.textOwner.Name = "textOwner";
-            this.textOwner.Size = new System.Drawing.Size(406, 165);
-            this.textOwner.TabIndex = 5;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(770, 104);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 5;
             // 
-            // label3
+            // buttonChangeOwner
             // 
-            this.label3.Location = new System.Drawing.Point(548, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 48);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "List of owner names";
+            this.buttonChangeOwner.Location = new System.Drawing.Point(802, 336);
+            this.buttonChangeOwner.Name = "buttonChangeOwner";
+            this.buttonChangeOwner.Size = new System.Drawing.Size(75, 23);
+            this.buttonChangeOwner.TabIndex = 6;
+            this.buttonChangeOwner.Text = "changeOwner";
+            this.buttonChangeOwner.UseVisualStyleBackColor = true;
+            this.buttonChangeOwner.Click += new System.EventHandler(this.buttonChangeOwner_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 442);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textOwner);
+            this.Controls.Add(this.buttonChangeOwner);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textFile);
@@ -123,8 +125,8 @@
         private System.Windows.Forms.TextBox textFile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textOwner;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonChangeOwner;
     }
 }
 
