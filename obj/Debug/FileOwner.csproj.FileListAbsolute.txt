@@ -7,3 +7,4 @@ D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.Properties.Resou
 D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.csproj.GenerateResource.Cache
 D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.exe
 D:\Users\Saruchi\Documents\GitHub\FileOwner\obj\Debug\FileOwner.pdb
+D:\Users\Saruchi\Documents\GitHub\FileOwner\bin\Debug\System.DirectoryServices.dll

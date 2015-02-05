@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security.AccessControl;
 using System.Security.Principal;
-
+using System.DirectoryServices;
 //using System.MarshalByRefObject.ComponentModel.Component.DirectoryServices.DirectoryEntry.AccountManagement.PrincipalContext;
 
 
@@ -20,12 +20,13 @@ namespace FileOwner
     {
         IdentityReference owner;
         List<String> owners = new List<string>();
-        List<String> files = new List<string>(); 
-        
+        List<String> files = new List<string>();
+        String userAccountPath = string.Format("WinNT://{0},computer", Environment.MachineName);
+
         public Form1()
         {
             InitializeComponent();
-            //comboBox1 .Items .Add 
+            populateOwner(); 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,48 +72,27 @@ namespace FileOwner
 
         }
 
-        public void changeOwner(String path)
+        public void populateOwner()
+        {            
+           // String path1 = "WinNT://"+ Environment.MachineName+"/"+Environment .UserName ;
+            using (var computerEntry = new DirectoryEntry(userAccountPath))
+                foreach (DirectoryEntry childEntry in computerEntry.Children)
+                    if (childEntry.SchemaClassName == "User")
+                        comboBox1 .Items .Add (childEntry.Name);
+        }
+
+        public void setOwner()
         {
-
-            SecurityIdentifier builtinAdminSid = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null);
-
-            PrincipalContext ctx = new PrincipalContext(ContextType.Machine);
-
-            GroupPrincipal group = GroupPrincipal.FindByIdentity(ctx, builtinAdminsSid.Value);
-
-            foreach (Principal p in group.Members)
-            {
-                Console.WriteLine(p.Name);
-            }
-
-            //IdentityReference ir;
-            //FileSecurity fs=comboBox1 .SelectedItem ;
-            
-            //for (int i = 0; i < 1 ; i++)
-            //{
-            //    ir = File.GetAccessControl(files[i]).GetOwner(typeof(SecurityIdentifier));
-            //    owner = File.SetAccessControl(files[i], ir);
-            //}
+            IdentityReference owner = new NTAccount(userAccountPath);
+            DirectoryInfo directory = new DirectoryInfo(textPath.Text);
+            DirectorySecurity directorySecurity = directory.GetAccessControl();
+            directorySecurity.SetOwner(owner);
+            directory.SetAccessControl(directorySecurity);
         }
 
         private void buttonChangeOwner_Click(object sender, EventArgs e)
         {
-            //owner = System.IO.File.GetAccessControl(files[i]).GetOwner(typeof(SecurityIdentifier));
-
-            //var ntAccount = new NTAccount("DOMAIN", "username");
-            //fs.SetOWner(ntAccount);
-
-            //try
-            //{
-            //    File.SetAccessControl(FILE, fs);
-            //}
-            //catch (InvalidOperationException ex)
-            //{
-            //    Console.WriteLine("You cannot assign ownership to that user." +
-            //     "Either you don't have TakeOwnership permissions, or it is not your user account."
-            //    );
-                
-            //}
+            setOwner();
         }
     }
 }
